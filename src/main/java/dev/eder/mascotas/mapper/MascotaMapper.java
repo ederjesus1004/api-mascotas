@@ -4,9 +4,9 @@ import dev.eder.mascotas.dto.MascotaRequest;
 import dev.eder.mascotas.dto.MascotaResponse;
 import dev.eder.mascotas.entity.Mascota;
 
-public final class VehiculoMapper {
+public final class MascotaMapper {
 
-    public VehiculoMapper(){
+    public MascotaMapper(){
     }
 
     // Request → entidad NUEVA
