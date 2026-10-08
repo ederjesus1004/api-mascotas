@@ -6,19 +6,19 @@ import dev.eder.mascotas.entity.Mascota;
 
 public final class MascotaMapper {
 
-    public MascotaMapper(){
+    public MascotaMapper() {
     }
 
     // Request → entidad NUEVA
-    public static Mascota toEntity(MascotaRequest request){
+    public static Mascota toEntity(MascotaRequest request) {
         Mascota mascota = new Mascota();
-        actualizarEntity(request,mascota);
+        actualizarEntity(request, mascota);
         return mascota;
     }
 
     // Copia el request sobre una entidad que YA EXISTE
 
-    public static void actualizarEntity(MascotaRequest request, Mascota mascota){
+    public static void actualizarEntity(MascotaRequest request, Mascota mascota) {
         mascota.setMicrochip(request.microchip().trim());
         mascota.setNombre(request.nombre().trim());
         mascota.setEspecie(request.especie().trim());
@@ -28,14 +28,14 @@ public final class MascotaMapper {
     }
 
     // Entidad → response con BUILDER
-    public static MascotaResponse toResponse (Mascota mascota){
+    public static MascotaResponse toResponse(Mascota mascota) {
         return MascotaResponse.builder()
-        .id(mascota.getId())
-        .microchip(mascota.getMicrochip())
-        .edad(mascota.getEdad())
-        .nombreDueno(mascota.getNombreDueno())
-        .descripcion(mascota.getNombre() + "(" + mascota.getEspecie() + mascota.getRaza() + ")")
-        .fechaRegistro(mascota.getFechaRegistro())
-        .build();
+                .id(mascota.getId())
+                .microchip(mascota.getMicrochip())
+                .edad(mascota.getEdad())
+                .nombreDueno(mascota.getNombreDueno())
+                .descripcion(mascota.getNombre() + "(" + mascota.getEspecie() + mascota.getRaza() + ")")
+                .fechaRegistro(mascota.getFechaRegistro())
+                .build();
     }
 }

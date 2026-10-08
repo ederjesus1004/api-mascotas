@@ -45,7 +45,8 @@ public class GlobalExceptionHandler {
         return armarRespuesta(HttpStatus.INTERNAL_SERVER_ERROR, "Ocurrió un error inesperado", Map.of());
     }
 
-    private ResponseEntity<ErrorResponse> armarRespuesta(HttpStatus status, String mensaje,Map<String, String> errores) {
+    private ResponseEntity<ErrorResponse> armarRespuesta(HttpStatus status, String mensaje,
+            Map<String, String> errores) {
         ErrorResponse body = new ErrorResponse(LocalDateTime.now(), status.value(), mensaje, errores);
         return ResponseEntity.status(status).body(body);
     }
